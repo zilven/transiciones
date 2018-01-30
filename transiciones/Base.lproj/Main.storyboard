@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="transiciones" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDj-dt-QVX" userLabel="Vw Contenedor Numero">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgD-fT-gYP">
+                                        <rect key="frame" x="0.0" y="148" width="375" height="291"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="291" id="LVA-4b-N5D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="213"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="wgD-fT-gYP" firstAttribute="leading" secondItem="rDj-dt-QVX" secondAttribute="leading" id="JTi-CW-ghp"/>
+                                    <constraint firstItem="wgD-fT-gYP" firstAttribute="centerY" secondItem="rDj-dt-QVX" secondAttribute="centerY" id="hh8-lt-Ows"/>
+                                    <constraint firstItem="wgD-fT-gYP" firstAttribute="centerX" secondItem="rDj-dt-QVX" secondAttribute="centerX" id="mb0-1j-5Qs"/>
+                                    <constraint firstAttribute="trailing" secondItem="wgD-fT-gYP" secondAttribute="trailing" id="rMS-5w-7Kq"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6ck-DC-A7i" appends="YES" id="ZuT-jv-b2L"/>
+                                    <outletCollection property="gestureRecognizers" destination="mI9-yd-JWu" appends="YES" id="Nsn-mI-Gp1"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPA-T6-JvR">
+                                <rect key="frame" x="152" y="623" width="71" height="30"/>
+                                <state key="normal" title="Transicion"/>
+                                <connections>
+                                    <action selector="doTapTransicion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9r0-aY-XNf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PPA-T6-JvR" secondAttribute="bottom" constant="26" id="MU5-pm-5c0"/>
+                            <constraint firstItem="rDj-dt-QVX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q6D-MG-1pl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rDj-dt-QVX" secondAttribute="bottom" constant="80" id="jTg-IC-uF6"/>
+                            <constraint firstItem="PPA-T6-JvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k1q-F4-TZx"/>
+                            <constraint firstAttribute="trailing" secondItem="rDj-dt-QVX" secondAttribute="trailing" id="lKI-VA-K71"/>
+                            <constraint firstItem="rDj-dt-QVX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rNx-wB-ETr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblNumero" destination="wgD-fT-gYP" id="oMD-4l-Xmi"/>
+                        <outlet property="vwContenedorNumero" destination="rDj-dt-QVX" id="ZIN-Ju-Dkr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="6ck-DC-A7i" userLabel="Swipe Up vwContenedor">
+                    <connections>
+                        <action selector="doSwipUpContenedor:" destination="BYZ-38-t0r" id="lLi-jN-AbG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="mI9-yd-JWu">
+                    <connections>
+                        <action selector="doSwipDownContenedor:" destination="BYZ-38-t0r" id="h5q-IX-mOk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
